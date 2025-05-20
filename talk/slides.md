@@ -108,7 +108,7 @@ autodesk$ echo $(whoami)
 
 
 <div style="display: flex; flex-direction: column; align-items: margin-top: 2em;">
-  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/1309177/316150505-629e59c0-9c6e-4013-9ad4-adb2bcf5080d.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250520%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250520T123025Z&X-Amz-Expires=300&X-Amz-Signature=6f16d4685a6aaca2b0eb123678ffb5870a70f26cf95691da6d75ce50ca366933&X-Amz-SignedHeaders=host#only-light" alt="Cute kitten" style="max-width: 80%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
+  <img src="figures/illustrations/time.svg" alt="Cute kitten" style="max-width: 80%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);" />
   <figcaption style="margin-top: 0.8em; font-size: 0.9em; color: #555; font-style: italic;">
     Time for installing Trio's dependencies with warm cache, Figure credit: <a href="https://github-production-user-asset-6210df.s3.amazonaws.com/1309177/316150505-629e59c0-9c6e-4013-9ad4-adb2bcf5080d.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250520%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250520T123025Z&X-Amz-Expires=300&X-Amz-Signature=6f16d4685a6aaca2b0eb123678ffb5870a70f26cf95691da6d75ce50ca366933&X-Amz-SignedHeaders=host#only-light" style="color: blue;">Astral's docs</a>
   </figcaption>
@@ -245,7 +245,7 @@ dependencies = [
 
 --- 
 
-# Poetry vs. uv 
+# Poetry vs. UV 
 
 
 ![bg right w:500 h:700](figures/illustrations/dependency_hell.png)
