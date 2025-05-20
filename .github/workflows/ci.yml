@@ -43,7 +43,7 @@ jobs:
         run: |
           mkdir -p .
           cp talk/slides.html index.html
-          cp -r talk/figures/illustrations/*.png figures/illustrations/*.png
+          cp -r talk/figures/ figures
           git add index.html
           git add talk/slides.html
           git add -f figures/illustrations/*.png
