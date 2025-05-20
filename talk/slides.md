@@ -139,7 +139,7 @@ Usage: uv [OPTIONS] <COMMAND>
 --- 
 
 
-Start a project 
+# Start a project 
 
 ```
 ~$ uv init test-uv
@@ -151,6 +151,7 @@ Start a project
 ├── main.py
 ├── pyproject.toml
 ```
+
 Run example script 
 
 ```
@@ -161,7 +162,7 @@ Run example script
 ```
 --- 
 
-## Start a package project 
+# Start a package project 
 ```
 ~$ uv init --package test-uv-package
 ~test-uv-package$ ls 
@@ -246,9 +247,5 @@ dependencies = [
 
 # Poetry vs. uv 
 
---- 
 
-# UV
-## - A promising candidate to acend from the Python packaging hell
-
-![bg right w:500 h:700](figures/illustrations/pythons_nine_circles.png)
+![bg right w:500 h:700](figures/illustrations/dependency_hell.png)
