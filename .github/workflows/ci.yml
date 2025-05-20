@@ -22,8 +22,8 @@ jobs:
       - name: Set up environment variables
         run: echo "LANG=en_US.UTF-8" >> $GITHUB_ENV
 
-      # Step 3: Run the Marp command using Docker
-      - name: Generate Marp documentation
+      # Step 3: Generate Marp documentation
+      - name: Generate Marp slides
         run: |
           docker run --rm \
             -v $PWD:/home/marp/app/ \
@@ -32,21 +32,25 @@ jobs:
             marpteam/marp-cli:v3.2.0 \
             --theme talk/theme.css talk/slides.md --html
 
+          # Save output for deployment
+          mkdir -p .deploy
+          cp talk/slides.html .deploy/index.html
+          [ -d talk/figures ] && cp -r talk/figures .deploy/figures
+
       # Step 4: Switch to gh-pages branch
       - name: Switch to gh-pages branch
         run: |
+          git fetch origin gh-pages || true
           git checkout -B gh-pages origin/gh-pages || git checkout --orphan gh-pages
           git reset --hard
+          rm -rf *
 
-      # Step 5: Deploy to gh-pages branch
-      - name: Deploy to gh-pages branch
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy generated slides
         run: |
-          mkdir -p .
-          cp talk/slides.html index.html
-          cp -r talk/figures figures
+          cp -r .deploy/* .
           git add index.html
-          git add talk/slides.html
-          git add -f figures/illustrations/*.png
+          git add -f figures || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Deploy Marp slides [skip ci]" || echo "No changes to commit"
