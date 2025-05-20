@@ -43,10 +43,10 @@ jobs:
         run: |
           mkdir -p .
           cp talk/slides.html index.html
-          cp -r talk/figures figures
+          cp -r talk/figures/illustrations/*.png figures/illustrations/*.png
           git add index.html
           git add talk/slides.html
-          git add -f figures
+          git add -f figures/illustrations/*.png
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Deploy Marp slides [skip ci]" || echo "No changes to commit"
