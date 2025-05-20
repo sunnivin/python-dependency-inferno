@@ -35,7 +35,6 @@ jobs:
       # Step 4: Switch to gh-pages branch
       - name: Switch to gh-pages branch
         run: |
-          git fetch origin gh-pages
           git checkout -B gh-pages origin/gh-pages || git checkout --orphan gh-pages
           git reset --hard
 
