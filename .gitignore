@@ -1,0 +1,7 @@
+*.png
+*.jpg
+*/__pycache__/*
+.mypy_cache
+__pycache__
+*ipynb_*
+.DS_Store*

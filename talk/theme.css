@@ -1,0 +1,320 @@
+/* ngi-theme.css*/
+/* @theme ngi-theme */
+
+@import 'default';
+
+section {
+  /* Override default background */
+  background-color: #F5F5F5;
+  color: black;
+  font-family: 'Times New Roman';
+  /*justify-content: flex-start;*/
+}
+
+
+h1 {
+color: #B22222;
+}
+
+h2 {
+  color: gray;
+  /* color: #7F8C8D; */
+}
+
+slide {
+  font-family: 'Times New Roman', serif !important;
+}
+
+section::after {
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+}
+
+td,
+th {
+  border: none !important;
+}
+
+/* Reset table styling provided by theme */
+table,
+tr,
+td,
+th {
+  all: unset;
+
+  /* Override contextual styling */
+  border: 0 !important;
+  background: transparent !important;
+}
+
+table {
+  display: table;
+}
+
+tr {
+  display: table-row;
+}
+
+/* ...and layout freely :) */
+table {
+  width: 100%;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+td,
+th {
+  display: table-cell;
+}
+img {
+  background-color: transparent !important;
+  box-sizing: initial;
+  max-width: 100%;
+}
+
+figure {
+  border: thin #c0c0c0 solid;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 220px;
+  margin: auto;
+}
+
+
+section.title {
+  --title-height: 130px;
+  --subtitle-height: 70px;
+  --subsubtitle-height: 50px;
+
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr var(--title-height) var(--subtitle-height) var(--subsubtitle-height) 1fr;
+  grid-template-areas: "." "title" "subtitle" "subsubtitle" ".";
+}
+
+section.title h1,
+section.title h2,
+section.title h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: var(--area-height);
+  line-height: var(--area-height);
+  font-size: calc(var(--area-height) * 0.7);
+
+  border: 0px dashed gray;
+  /* debug */
+}
+
+section.title h1 {
+  grid-area: title;
+  --area-height: var(--title-height);
+}
+
+section.title h2 {
+  grid-area: subtitle;
+  --area-height: var(--subtitle-height);
+}
+
+section.title h3 {
+  grid-area: subsubtitle;
+  text-align: center;
+  --area-height: var(--subsubtitle-height);
+}
+
+section.split-text {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "slideheading slideheading"
+    "leftpanel rightpanel";
+}
+
+/* debug */
+section.split-text h3,
+section.split-text .ldiv,
+section.split-text .rdiv {
+  border: none;
+}
+
+section.split-text h3 {
+  grid-area: slideheading;
+  font-size: 50px;
+}
+
+section.split-text .ldiv {
+  grid-area: leftpanel;
+  text-align: left;
+}
+
+section.split-text .rdiv {
+  grid-area: rightpanel;
+  text-align: left;
+}
+
+section.split-text-image {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Use fractions for responsive columns */
+  grid-template-rows: auto auto;
+  /* Automatically adjust row heights */
+  grid-template-areas:
+    "slideheading slideheading"
+    /* Header spans both columns */
+    "leftpanel rightpanel";
+  /* Panels for images */
+}
+
+/* Debug */
+section.split-text-image h3,
+section.split-text-image .ldiv,
+section.split-text-image .rdiv {
+  border: none;
+  /* No border for debug mode */
+}
+
+section.split-text-image {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Use fractions for responsive columns */
+  grid-template-rows: auto auto;
+  /* Automatically adjust row heights */
+  grid-template-areas:
+    "slideheading slideheading"
+    /* Header spans both columns */
+    "leftpanel rightpanel";
+  /* Panels for images */
+}
+
+/* Debug */
+section.split-text-image h1,
+section.split-text-image .ldiv,
+section.split-text-image .rdiv {
+  border: none;
+  /* No border for debug mode */
+}
+
+section.split-text-image h1 {
+  grid-area: slideheading;
+  /* Place the header in the first row */
+  font-size: 50px;
+  /* Set the font size for the header */
+  text-align: center;
+  /* Center the header text */
+  margin: 0;
+  /* Remove default margin */
+  overflow: hidden;
+  /* Hide overflow if text is too long */
+  text-overflow: ellipsis;
+  /* Add ellipsis if the text overflows */
+}
+
+section.split-text-image .ldiv {
+  grid-area: leftpanel;
+  /* Place left image in the left column */
+  display: flex;
+  /* Use flexbox for image alignment */
+  justify-content: center;
+  /* Center image horizontally */
+  align-items: center;
+  /* Center image vertically */
+}
+
+section.split-text-image .rdiv {
+  grid-area: rightpanel;
+  /* Place right image in the right column */
+  display: flex;
+  /* Use flexbox for image alignment */
+  justify-content: center;
+  /* Center image horizontally */
+  align-items: center;
+  /* Center image vertically */
+}
+
+img {
+  max-width: 100%;
+  /* Responsive images */
+  height: auto;
+  /* Maintain aspect ratio */
+}
+
+
+section.body-quote {
+  margin: 1em;
+  font: 1.2rem/1.4 Georgia, serif;
+}
+
+section.body-quote {
+  margin: 0;
+  background: #eee;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+figcaption {
+  position: right;
+  bottom: 0;
+  padding: 15px;
+  color: black;
+  background-color: #F5F5F5;
+  text-align: right;
+  font-size: 1rem;
+  width: 100%;
+}
+
+
+div.twocols {
+  margin-top: 35px;
+  column-count: 2;
+}
+
+div.twocols p:first-child,
+div.twocols h1:first-child,
+div.twocols h2:first-child,
+div.twocols ul:first-child,
+div.twocols ul li:first-child,
+div.twocols ul li p:first-child {
+  margin-top: 0 !important;
+}
+
+div.twocols p.break {
+  break-before: column;
+  margin-top: 0;
+}
+
+/* CSS to align the term to the right */
+.right-aligned {
+  text-align: right;
+  font-style: italic;
+  margin-top: 0.5rem;
+  /* Add some spacing from the quote */
+  display: block;
+}
+
+
+div.twocols {
+  margin-top: 35px;
+  column-count: 2;
+}
+
+div.twocols p:first-child,
+div.twocols h1:first-child,
+div.twocols h2:first-child,
+div.twocols ul:first-child,
+div.twocols ul li:first-child,
+div.twocols ul li p:first-child {
+  margin-top: 0 !important;
+}
+
+div.twocols p.break {
+  break-before: column;
+  margin-top: 0;
+}

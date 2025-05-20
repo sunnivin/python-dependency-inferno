@@ -1,0 +1,55 @@
+name: Deploy Marp Documentation
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up environment variables
+      - name: Set up environment variables
+        run: echo "LANG=en_US.UTF-8" >> $GITHUB_ENV
+
+      # Step 3: Run the Marp command using Docker
+      - name: Generate Marp documentation
+        run: |
+          docker run --rm \
+            -v $PWD:/home/marp/app/ \
+            -e MARP_USER="$(id -u):$(id -g)" \
+            -e LANG=$LANG \
+            marpteam/marp-cli:v3.2.0 \
+            --theme talk/theme.css talk/slides.md --html
+
+      # Step 4: Switch to gh-pages branch
+      - name: Switch to gh-pages branch
+        run: |
+          git fetch origin gh-pages
+          git checkout -B gh-pages origin/gh-pages || git checkout --orphan gh-pages
+          git reset --hard
+
+      # Step 5: Deploy to gh-pages branch
+      - name: Deploy to gh-pages branch
+        run: |
+          mkdir -p .
+          cp talk/slides.html index.html
+          cp -r talk/figures figures
+          git add index.html
+          git add -f talk/figures
+          git add talk/slides.html
+          git add -f figures
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Deploy Marp slides [skip ci]" || echo "No changes to commit"
+          git push origin gh-pages --force
