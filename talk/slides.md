@@ -32,7 +32,7 @@ autodesk$ echo $(whoami)
 
 ---
 
-<!-- _footer: 'Figure credit:[xkcd](https://imgs.xkcd.com/comics/python_environment.png)' -->
+<!-- _footer: 'Figure credit [xkcd](https://imgs.xkcd.com/comics/python_environment.png)' -->
 
 # The Python dependency hell 
 
@@ -87,7 +87,7 @@ autodesk$ echo $(whoami)
 
 - Ultra-fast Python package manager and resolver
 - Drop-in replacement for `pip`, `pip-tools`, and parts of `Poetry`
-- Unified installation of python across OS
+-  Unified installation of python across OS (:scream:  No `pyenv` :scream: )
 - The lock file is cross platform
 
 
@@ -123,7 +123,7 @@ Usage: uv [OPTIONS] <COMMAND>
 --- 
 
 
-# Start a project 
+<!-- # Start a project 
 
 Create project
 ```
@@ -145,11 +145,11 @@ Run example script
   Creating virtual environment at: .venv
   Hello from test-uv!
 ```
---- 
+---  -->
 
-# Start a package project 
+# Start a packaged project 
 
-Create package project
+Create
 ```
 ~$ uv init --package test-uv-package
 ~test-uv-package$ ls 
@@ -163,7 +163,7 @@ Create package project
 │     └── __init__.py
 ```
 
-Run example script
+Run
 
 ```
 ~test-uv-package$ uv run test-uv-package
@@ -234,7 +234,8 @@ Run example script
 
 # Private packages migration 
 
-### Poetry (1.8)
+### Poetry 1.8 
+SCP-like shorthand
 ```
 [tool.poetry.dependencies]
 python = ">=3.11,<3.12"
@@ -242,7 +243,8 @@ my-private-package = { git = "git@github.com:my-org/my-private-package.git", tag
 ```
 
 
-### uv
+### uv 
+Explicit URL-schemes
 ```
 [project]
 requires-python = ">=3.11,<3.12"
@@ -251,7 +253,7 @@ dependencies = [
   ]
 
 [tool.uv.sources]
-"my-private-package" {git= "ssh://git@github.com:my-org/my-private-package.git", rev="34f59994bb920679ba5f0cade8061e0da7ca00b5"}
+"my-private-package" = {git= "ssh://git@github.com:my-org/my-private-package.git", rev="34f59994bb920679ba5f0cade8061e0da7ca00b5"}
 ```
 
 --- 
