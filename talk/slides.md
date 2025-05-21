@@ -116,36 +116,6 @@ autodesk$ echo $(whoami)
 
 ---
 
-# Migration Output
-
-<div style="
-  font-family: monospace; 
-  background-color: white;  /* light gray background */
-  padding: 1em; 
-  border-radius: 6px; 
-  border: 1px solid #ccc;    /* subtle border around entire block */
-  display: inline-block;
-  max-width: 900px;
-">
-  <div>~my-project$ uvx migrate-to-uv</div>
-  <div>   Installed 1 package in 16ms</div>
-  <div style="
-    border: 2px solid red; 
-    border-radius: 4px; 
-    padding: 4px; 
-    margin: 4px 0;
-    background-color: #fff5f5;  /* very light red background for emphasis */
-  ">
-    Locking dependencies with "uv lock"...
-  </div>
-  <div>Using CPython 3.12.4 interpreter at: /Users/sunnivaindrehus/.pyenv/versions/3.12.4/bin/python3.12</div>
-  <div>Resolved 123 packages in 1.01s</div>
-  <div>Successfully migrated project from Poetry to uv!</div>
-</div>
-
----
-
-
 # Basic API 
 
 ## Install uv  
@@ -302,7 +272,7 @@ dependencies = [
 
 --- 
 
-# Poetry vs. UV 
+# Poetry 2.X vs. UV 
 
 
 ![bg right w:500 h:700](figures/illustrations/dependency_hell.png)
