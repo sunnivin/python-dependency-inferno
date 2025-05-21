@@ -43,16 +43,16 @@ autodesk$ echo $(whoami)
 # Short :snake: :package: history 
 
 - **1991** Python 1.0 released (Guido van Rossum)
+- **2007** `virtualenv` (Ian Bicking)
 - **2008**  Python 3.0 & rise of `setuptools`
-- **2009**  `conda` released (Anaconda Inc.)
 - **2011** `pip` bundled with Python
-- **2013** `virtualenv` becomes widely used
-- **2017** `pipenv` launched (PyPA-backed)
+- **2012**  `conda` (Anaconda Inc.) and `venv` (Vinay Sajip)
+- **2015** [PEP 517](https://peps.python.org/pep-0517/)
+- **2016** [PEP518](https://peps.python.org/pep-0518/)
+- **2017** `pipenv`, combining `venv` and `pip` (PyPA-backed)
 - **2018** `poetry` (S. Eustace)
 - **2019**  [`hatch`](https://github.com/pypa/hatch) (Ofek)
-- **2020**:
-  - Widespread `pyproject.toml` adoption ([PEPs 517/518/621](https://peps.python.org/pep-0621/))
-  - [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
+- **2020** [PEP621](https://peps.python.org/pep-0621/) and [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
 - **2024** [`uv`](https://docs.astral.sh/uv/) (Astral)
 
 --- 
@@ -60,18 +60,18 @@ autodesk$ echo $(whoami)
 # Short :snake: :package: history 
 
 - **1991** Python 1.0 released (Guido van Rossum)
+- **2007** `virtualenv` (Ian Bicking)
 - **2008**  Python 3.0 & rise of `setuptools`
-- **2009**  `conda` released (Anaconda Inc.)
 - **2011** `pip` bundled with Python
-- **2013** `virtualenv` becomes widely used
-- **2017** `pipenv` launched (PyPA-backed)
+- **2012**  `conda` (Anaconda Inc.) and `venv` (Vinay Sajip)
+- **2015** [PEP 517](https://peps.python.org/pep-0517/)
+- **2016** [PEP518](https://peps.python.org/pep-0518/)
+- **2017** `pipenv`, combining `venv` and `pip` (PyPA-backed)
     <div style="border: 2px solid red; padding: 6px; border-radius: 6px; background-color: #fff5f5;">
     <strong>2018</strong> <code>poetry</code> (S. Eustace)
     </div>
 - **2019**  [`hatch`](https://github.com/pypa/hatch) (Ofek)
-- **2020**:
-  - Widespread `pyproject.toml` adoption ([PEPs 517/518/621](https://peps.python.org/pep-0621/))
-  - [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
+- **2020** [PEP621](https://peps.python.org/pep-0621/) and [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
 - **2024** [`uv`](https://docs.astral.sh/uv/) (Astral)
 
 
@@ -81,16 +81,16 @@ autodesk$ echo $(whoami)
 # Short :snake: :package: history 
 
 - **1991** Python 1.0 released (Guido van Rossum)
+- **2007** `virtualenv` (Ian Bicking)
 - **2008**  Python 3.0 & rise of `setuptools`
-- **2009**  `conda` released (Anaconda Inc.)
 - **2011** `pip` bundled with Python
-- **2013** `virtualenv` becomes widely used
-- **2017** `pipenv` launched (PyPA-backed)
+- **2012**  `conda` (Anaconda Inc.) and `venv` (Vinay Sajip)
+- **2015** [PEP 517](https://peps.python.org/pep-0517/)
+- **2016** [PEP518](https://peps.python.org/pep-0518/)
+- **2017** `pipenv`, combining `venv` and `pip` (PyPA-backed)
 - **2018** `poetry` (S. Eustace)
 - **2019**  [`hatch`](https://github.com/pypa/hatch) (Ofek)
-- **2020**:
-  - Widespread `pyproject.toml` adoption ([PEPs 517/518/621](https://peps.python.org/pep-0621/))
-  - [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
+- **2020** [PEP621](https://peps.python.org/pep-0621/) and [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
   <div style="border: 2px solid red; padding: 6px; border-radius: 6px; background-color: #fff5f5;">
     <strong>2024</strong> <code>uv</code> (Astral)
     </div>
@@ -115,6 +115,36 @@ autodesk$ echo $(whoami)
 </div>
 
 ---
+
+# Migration Output
+
+<div style="
+  font-family: monospace; 
+  background-color: white;  /* light gray background */
+  padding: 1em; 
+  border-radius: 6px; 
+  border: 1px solid #ccc;    /* subtle border around entire block */
+  display: inline-block;
+  max-width: 900px;
+">
+  <div>~my-project$ uvx migrate-to-uv</div>
+  <div>   Installed 1 package in 16ms</div>
+  <div style="
+    border: 2px solid red; 
+    border-radius: 4px; 
+    padding: 4px; 
+    margin: 4px 0;
+    background-color: #fff5f5;  /* very light red background for emphasis */
+  ">
+    Locking dependencies with "uv lock"...
+  </div>
+  <div>Using CPython 3.12.4 interpreter at: /Users/sunnivaindrehus/.pyenv/versions/3.12.4/bin/python3.12</div>
+  <div>Resolved 123 packages in 1.01s</div>
+  <div>Successfully migrated project from Poetry to uv!</div>
+</div>
+
+---
+
 
 # Basic API 
 
@@ -141,6 +171,7 @@ Usage: uv [OPTIONS] <COMMAND>
 
 # Start a project 
 
+Create project
 ```
 ~$ uv init test-uv
 ~test-uv$ ls
@@ -163,6 +194,8 @@ Run example script
 --- 
 
 # Start a package project 
+
+Create package project
 ```
 ~$ uv init --package test-uv-package
 ~test-uv-package$ ls 
@@ -187,16 +220,40 @@ Run example script
 
 --- 
 
-# Plain dependency migration 
 
-```
-~my-project$ uvx migrate-to-uv
-Installed 1 package in 16ms
-Locking dependencies with "uv lock"...
-Using CPython 3.12.4 interpreter at: /Users/sunnivaindrehus/.pyenv/versions/3.12.4/bin/python3.12
-Resolved 123 packages in 1.01s
-Successfully migrated project from Poetry to uv!
-```
+# Plain dependency migration
+<div style="
+  font-family: monospace; 
+  background-color: white;
+  padding: 1em; 
+  border-radius: 6px; 
+  border: 1px solid #ccc;
+  display: inline-block;
+  max-width: 1100px;
+">
+  <div>~my-project$ uvx migrate-to-uv</div>
+
+  <div >Installed 1 package in 16ms</div>
+
+  <div >
+    Locking dependencies with "uv lock"...
+  </div>
+
+  <div >Using CPython 3.12.4 interpreter at: /Users/sunnivaindrehus/.pyenv/versions/3.12.4/bin/python3.12</div>
+
+  <div style="
+    padding-left: 4em;
+    border: 2px solid red; 
+    border-radius: 4px; 
+    padding: 4px; 
+    margin: 4px 0;
+    background-color: #fff5f5;
+  ">Resolved 123 packages in 1.01s</div>
+
+  <div >Successfully migrated project from Poetry to uv!</div>
+</div>
+
+
 ---
 
 # Complex dependency migration 
