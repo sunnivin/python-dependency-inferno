@@ -9,5 +9,5 @@ This repository contains a [talk](https://sunnivin.github.io/a-new-core/talk/sli
 The material in the slides and demo are based on the content from the following sources:
 
 - [Episode 238: Charlie Marsh: Accelerating Python toolong with Ruff and uv](https://realpython.com/podcasts/rpp/238/) 
-- [Python Developer Tooling Handbook](https://pydevtools.com/handbook/) (accessed 20.05.25)
-
+- [Python Developer Tooling Handbook](https://pydevtools.com/handbook/), accessed 20.05.25
+- [History of Python](https://en.wikipedia.org/wiki/History_of_Python), accessed 19.05.25
