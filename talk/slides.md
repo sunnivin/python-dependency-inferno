@@ -36,68 +36,52 @@ autodesk$ echo $(whoami)
 
 # The Python dependency hell 
 
-![bg right w:500](https://imgs.xkcd.com/comics/python_environment.png)
+![bg right w:600](https://imgs.xkcd.com/comics/python_environment.png)
+
 
 ---
 
-# Short :snake: :package: history 
+### Short :snake: :package: history 
 
 - **1991** Python 1.0 released (Guido van Rossum)
-- **2007** `virtualenv` (Ian Bicking)
-- **2008**  Python 3.0 & rise of `setuptools`
-- **2011** `pip` bundled with Python
+- **2004** `setuptools` (Phillip Eby) — Packaging foundation
+- **2007** `virtualenv` (Ian Bicking) - Isolating environments
+- **2008**  Python 3.0
+- **2011** `pip` bundled with Python - Standardizing the installer
 - **2012**  `conda` (Anaconda Inc.) and `venv` (Vinay Sajip)
-- **2015** [PEP 517](https://peps.python.org/pep-0517/)
-- **2016** [PEP518](https://peps.python.org/pep-0518/)
-- **2017** `pipenv`, combining `venv` and `pip` (PyPA-backed)
-- **2018** `poetry` (S. Eustace)
+- **2015** [PEP 517](https://peps.python.org/pep-0517/) - Build system interface
+- **2016** [PEP518](https://peps.python.org/pep-0518/) - Build dependencies declaration
+- **2017** `pipenv` (PyPA-backed) - Unified env & deps 
+- **2018** `poetry` (S. Eustace) - All-in-one manager
 - **2019**  [`hatch`](https://github.com/pypa/hatch) (Ofek)
-- **2020** [PEP621](https://peps.python.org/pep-0621/) and [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
+- **2020** [PEP621](https://peps.python.org/pep-0621/) - Metadata, [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
 - **2024** [`uv`](https://docs.astral.sh/uv/) (Astral)
+
+
 
 --- 
 
-# Short :snake: :package: history 
-
 - **1991** Python 1.0 released (Guido van Rossum)
-- **2007** `virtualenv` (Ian Bicking)
-- **2008**  Python 3.0 & rise of `setuptools`
-- **2011** `pip` bundled with Python
+- **2004** `setuptools` (Phillip Eby) — Packaging foundation
+- **2007** `virtualenv` (Ian Bicking) - Isolating environments
+- **2008**  Python 3.0
+- **2011** `pip` bundled with Python - Standardizing the installer
 - **2012**  `conda` (Anaconda Inc.) and `venv` (Vinay Sajip)
-- **2015** [PEP 517](https://peps.python.org/pep-0517/)
-- **2016** [PEP518](https://peps.python.org/pep-0518/)
-- **2017** `pipenv`, combining `venv` and `pip` (PyPA-backed)
-    <div style="border: 2px solid red; padding: 6px; border-radius: 6px; background-color: #fff5f5;">
-    <strong>2018</strong> <code>poetry</code> (S. Eustace)
+- **2015** [PEP 517](https://peps.python.org/pep-0517/) - Build system interface
+- **2016** [PEP518](https://peps.python.org/pep-0518/) - Build dependencies declaration
+- **2017** `pipenv` (PyPA-backed) - Unified env & deps 
+ <div style="border: 2px solid red; padding: 6px; border-radius: 6px; background-color: #fff5f5;">
+    <strong>2018</strong> <code>poetry</code> (S. Eustace) - All-in-one Manager
     </div>
+
 - **2019**  [`hatch`](https://github.com/pypa/hatch) (Ofek)
-- **2020** [PEP621](https://peps.python.org/pep-0621/) and [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
-- **2024** [`uv`](https://docs.astral.sh/uv/) (Astral)
-
-
---- 
-
-
-# Short :snake: :package: history 
-
-- **1991** Python 1.0 released (Guido van Rossum)
-- **2007** `virtualenv` (Ian Bicking)
-- **2008**  Python 3.0 & rise of `setuptools`
-- **2011** `pip` bundled with Python
-- **2012**  `conda` (Anaconda Inc.) and `venv` (Vinay Sajip)
-- **2015** [PEP 517](https://peps.python.org/pep-0517/)
-- **2016** [PEP518](https://peps.python.org/pep-0518/)
-- **2017** `pipenv`, combining `venv` and `pip` (PyPA-backed)
-- **2018** `poetry` (S. Eustace)
-- **2019**  [`hatch`](https://github.com/pypa/hatch) (Ofek)
-- **2020** [PEP621](https://peps.python.org/pep-0621/) and [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
-  <div style="border: 2px solid red; padding: 6px; border-radius: 6px; background-color: #fff5f5;">
+- **2020** [PEP621](https://peps.python.org/pep-0621/) - Metadata, [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
+ <div style="border: 2px solid red; padding: 6px; border-radius: 6px; background-color: #fff5f5;">
     <strong>2024</strong> <code>uv</code> (Astral)
     </div>
 
 
---- 
-
+---
 
 # UV
 

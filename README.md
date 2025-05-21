@@ -2,7 +2,7 @@
 
 This repository contains a [talk](https://sunnivin.github.io/a-new-core/talk/slides.html) about the so called dependency hell in Python and how the package manager [uv](https://docs.astral.sh/uv/) can help us deal with it on the way. 
 
-
+The talk was presented at the internal event Forma Tech Session 21.05.25
 
 # Credit
 
