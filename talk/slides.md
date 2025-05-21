@@ -17,7 +17,7 @@ paginate: true
 ####
 ####
 ####
-#### :zap: Lighting talk :zap: 
+#### :zap: Lightning Talk :zap: 
 #### Sunniva Indrehus
 
 
@@ -50,11 +50,11 @@ autodesk$ echo $(whoami)
 - **2011** `pip` bundled with Python - Standardizing the installer
 - **2012**  `conda` (Anaconda Inc.) and `venv` (Vinay Sajip)
 - **2015** [PEP 517](https://peps.python.org/pep-0517/) - Build system interface
-- **2016** [PEP518](https://peps.python.org/pep-0518/) - Build dependencies declaration
+- **2016** [PEP 518](https://peps.python.org/pep-0518/) - Build dependencies declaration
 - **2017** `pipenv` (PyPA-backed) - Unified env & deps 
 - **2018** `poetry` (S. Eustace) - All-in-one manager
 - **2019**  [`hatch`](https://github.com/pypa/hatch) (Ofek)
-- **2020** [PEP621](https://peps.python.org/pep-0621/) - Metadata, [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
+- **2020** [PEP 621](https://peps.python.org/pep-0621/) - Metadata, [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
 - **2024** [`uv`](https://docs.astral.sh/uv/) (Astral)
 
 
@@ -68,14 +68,14 @@ autodesk$ echo $(whoami)
 - **2011** `pip` bundled with Python - Standardizing the installer
 - **2012**  `conda` (Anaconda Inc.) and `venv` (Vinay Sajip)
 - **2015** [PEP 517](https://peps.python.org/pep-0517/) - Build system interface
-- **2016** [PEP518](https://peps.python.org/pep-0518/) - Build dependencies declaration
+- **2016** [PEP 518](https://peps.python.org/pep-0518/) - Build dependencies declaration
 - **2017** `pipenv` (PyPA-backed) - Unified env & deps 
  <div style="border: 2px solid red; padding: 6px; border-radius: 6px; background-color: #fff5f5;">
-    <strong>2018</strong> <code>poetry</code> (S. Eustace) - All-in-one Manager
+    <strong>2018</strong> <code>poetry</code> (S. Eustace) - All-in-one manager
     </div>
 
 - **2019**  [`hatch`](https://github.com/pypa/hatch) (Ofek)
-- **2020** [PEP621](https://peps.python.org/pep-0621/) - Metadata, [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
+- **2020** [PEP 621](https://peps.python.org/pep-0621/) - Metadata, [`PDM`](https://github.com/pdm-project/pdm) (Frost Ming)
  <div style="border: 2px solid red; padding: 6px; border-radius: 6px; background-color: #fff5f5;">
     <strong>2024</strong> <code>uv</code> (Astral)
     </div>
@@ -87,8 +87,8 @@ autodesk$ echo $(whoami)
 
 - Ultra-fast Python package manager and resolver
 - Drop-in replacement for `pip`, `pip-tools`, and parts of `Poetry`
--  Unified installation of python across OS (:scream:  No `pyenv` :scream: )
-- The lock file is cross platform
+-  Cross-platform Python installation (:scream:  No `pyenv`! :scream: )
+- Lock file is cross-platform
 
 
 <div style="display: flex; flex-direction: column; align-items: margin-top: 2em;">
@@ -212,7 +212,7 @@ Run
 
 # Complex dependency migration 
 
-1. Make sure to capture all dependendencies (use the right poetry version, and all relevant groups)
+1. Make sure to capture all dependencies (use the right poetry version, and all relevant groups)
   
     ```
     ~/repo$ poetry@1.8 export -f requirements.txt --output requirements.txt --without-hashes --with dev
@@ -224,7 +224,7 @@ Run
     ~/repo$ uv init --bare
     ```
 
-3. Install locked dependencies from `.txt`file 
+3. Install locked dependencies from `.txt` file 
    
     ```
     ~/repo$ uv add -r requirements.txt
@@ -244,12 +244,12 @@ my-private-package = { git = "git@github.com:my-org/my-private-package.git", tag
 
 
 ### uv 
-Explicit URL-schemes
+Explicit URL schemes
 ```
 [project]
 requires-python = ">=3.11,<3.12"
 dependencies = [
-    "my-private-package;
+    "my-private-package"
   ]
 
 [tool.uv.sources]
